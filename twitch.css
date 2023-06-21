@@ -330,14 +330,14 @@ body::-webkit-scrollbar {
     top: 20px;
     z-index: 3;
 
-    transition-duration: .5s;
+    transition-duration: 1s;
 }
 #ss-position-2, #ss-position-4 {
     top: 42px;
     height: 255px;
     width: 637.5px;
     z-index: 2;
-    transition-duration: .5s;
+    transition-duration: 1s;
 }
 #ss-position-2 {
     left: 178px;
@@ -350,7 +350,7 @@ body::-webkit-scrollbar {
     height: 210px;
     top: 64px;
     z-index: 1;
-    transition-duration: .5s;
+    transition-duration: 1s;
 }
 #ss-position-1 {
     left: 112px;

@@ -88,10 +88,10 @@ ssNextButton.addEventListener('click', function() {
                 let ii = i;
                 ssItems[i + 1].id = 'ss-position-5';
                 ssItems[i + 1].animate ([
-                    {left: '900px', opacity: '0', width: '250px', height: '150px'},
+                    {left: '920px', opacity: '0', width: '250px', height: '150px'},
                     {left: '598px', opacity: '1', width: '525px', height: '210px'}
                 ], {
-                    duration: 500,
+                    duration: 1000,
                     iterations: 1,
                     easing: "ease"
                 })
@@ -102,7 +102,7 @@ ssNextButton.addEventListener('click', function() {
 
                 ssItems[i - 4].animate([
                     {left: '112px', opacity: '1', width: '525px', height: '210px'},
-                    {left: '90px', opacity: '0', width: '250px', height: '150px'}
+                    {left: '70px', opacity: '0', width: '250px', height: '150px'}
                 ], {
                     duration: 1000,
                     iterations: 1,
@@ -110,7 +110,7 @@ ssNextButton.addEventListener('click', function() {
                 });
                 setTimeout(function() {
                     ssItems[ii - 4].id = '';
-                }, 500)
+                }, 1000)
                 break
             }
         }
@@ -128,7 +128,7 @@ ssPrevButton.addEventListener('click', function() {
                 ssItems[i - 4].id = 'ss-position-2';
                 ssItems[i - 5].id = 'ss-position-1';
                 ssItems[i - 5].animate ([
-                    {left: '90px', opacity: '0', width: '250px', height: '150px'},
+                    {left: '70px', opacity: '0', width: '250px', height: '150px'},
                     {left: '112px;', opacity: '1', width: '525px', height: '210px'}
                 ], {
                     duration: 1000,
@@ -137,7 +137,7 @@ ssPrevButton.addEventListener('click', function() {
                 })
                 ssItems[i].animate([
                     {left: '598px', opacity: '1', width: '525px', height: '210px'},
-                    {left: '900px', opacity: '0', width: '250px', height: '150px'}
+                    {left: '920px', opacity: '0', width: '250px', height: '150px'}
                 ], {
                     duration: 1000,
                     iterations: 1,
