@@ -1,0 +1,8 @@
+$theme-colors: (
+    "secondary": #6c757d,
+    "light":      #f8f9fa,
+    "twitch-purple": #bb00ff,
+    "dark": rgb(23, 23, 23)
+);
+
+@import'../node_modules/bootstrap/scss/bootstrap.scss'
