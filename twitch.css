@@ -1,0 +1,774 @@
+/* General */
+
+@import url('https://fonts.cdnfonts.com/css/roobert');
+body{
+    padding-bottom: 3000px;
+    background-color: black;
+    font-family: 'Roobert', sans-serif;
+    overflow: scroll;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.flexbox {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#header{
+    top: 0;
+    right: 0;
+    left: 0;
+    padding: 0;
+    z-index: 100;
+}
+#twitch-icon{
+    font-size: 26px;
+}
+#twitch-icon:hover{
+    cursor: pointer;
+}
+.header-left-button:hover {
+    background-color: rgb(23, 23, 23);
+    color: rgb(171, 0, 251);
+    border-color: rgb(23, 23, 23);
+}
+
+/* Make the header-left-button class buttons to not change the background when active */
+
+#three-dots{
+    font-size: 20px
+}
+#searchbar {
+    margin-left: 2px;
+}
+#searchbar-input{
+    background-color:rgb(8, 8, 8);
+    border-width: 1px;
+    border-color: rgb(89, 89, 89);
+    width: 356px;
+    padding: 5px 10px;
+    margin-right: 2px;
+    box-sizing: border-box;
+}
+#searchbar-input:hover{
+    width: 361px;
+    border-width: 2px;
+}
+
+/* Should add a clicked version for searchbar when it turns pink */
+
+#searchbar-input::placeholder{
+    color: rgb(188, 188, 188);
+    font-size: 14px;
+    font-weight: 600;
+}
+#search-button{
+    background-color: rgb(42, 42, 42);
+}
+#person-img{
+    width: 30px;
+    margin-right: 0;
+}
+#gb-button{
+    width: fit-content;
+    height: 30px;
+    padding: 0 10px;
+    background-color: rgb(48, 48, 48);
+    font-size: 13px;
+}
+#gb-button:hover{
+    background-color: rgb(55, 55, 55);
+    animation: 0.1s;
+}
+#fcc {
+    width: 40px;
+}
+#fcc span:hover{
+    cursor: default;
+}
+#sidebar {
+    background-color: rgb(31, 31, 31);
+    align-items: start;
+    position: fixed;
+    top: 51px;
+    left: 0;
+    bottom: 0;
+    width: 240.200px;
+    overflow-y: scroll;
+    padding-top: 5px;
+    box-sizing: border-box;
+}
+#sidebar::-webkit-scrollbar {
+    display: none;
+}
+#sidebar div:not(#sidebar div div) {
+    width: 100%;
+}
+.sidebar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+}
+#sidebar-collapse{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+}
+#fc-text{
+    font-weight: 700;
+    font-size: 12px;
+}
+#followed-channels {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    padding-top: 12px;
+}
+#followed-channels div:not(#followed-channels div div) {
+    width: 100%;
+}
+.channel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 0;
+    height: 42px;
+    width: 240.2px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.channel:hover {
+    background-color: rgb(43, 43, 43);
+}
+.fc-left {
+    display: flex;
+    flex-direction: row;
+}
+.offline-fc-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.offline-fc-left p {
+    margin: 0 0 2px 0;
+}
+.pfp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.channel-pfp {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+.channel-texts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 129.637px;
+}
+.channel-texts div {
+    width: 128.775px;
+    height: 16.800px;
+    padding: 0;
+}
+.channel-texts div p {
+    padding: 0;
+}
+.channel-name-div {
+    margin-bottom: -2px;
+}
+.stream-content-div {
+    margin-bottom: 5px;
+}
+.channel-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 0;
+}
+.stream-content {
+    color: rgb(176, 176, 176);
+    font-size: 13px;
+    padding: 0;
+}
+/*.fc-right {
+    display: flex;
+    flex-direction: column;
+    height: 32.400px;
+    width: 100%;
+}*/
+.fc-right-live {
+    display: flex;
+    flex-direction: column;
+    height: 32.400px;
+    width: 100%;
+}
+.fc-right-live p {
+    padding: 0;
+    color: rgb(220, 220, 220);
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 6px;
+}
+.fc-right-live p span {
+    margin-right: 3px;
+}
+.offline-text {
+    padding: 0;
+    color: rgb(220, 220, 220);
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+}
+.live-symbol {
+    font-size: 9px;
+}
+
+.sb-show-more {
+    background-color: inherit;
+    border: 0;
+    color: rgb(199, 156, 255);
+    font-size: 12px;
+    margin: 8px 0 0 10px;
+    padding: 0;
+}
+.show-more-btn:hover {
+    text-decoration: underline;
+    color: rgb(176, 92, 255);
+}
+.rc-text {
+    margin: 20px 0 0 10px;
+    font-weight: bold;
+    font-size: 12px;
+}
+#recommended-channels {
+    margin-top: 7px;
+}
+
+#main {
+    position: absolute;
+    left: 240.200px;
+    top: 51px;
+    bottom: 0;
+    right: 0;
+    padding: 0 30px;
+}
+
+/*
+###############################################################################
+                                Slideshow 
+###############################################################################
+*/
+
+#slideshow-container {
+    height: 350px;
+    right: 0;
+    margin-bottom: 20px;
+    position: relative;
+}
+.slideshow-item:not(#ss-position-1, #ss-position-2, #ss-position-3, #ss-position-4, #ss-position-5) {
+    display: none;
+}
+.slideshow-item {
+    background-color: #0000ff;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+#ss-prev-button-div, #ss-next-button-div {
+    position: absolute;
+    height: 100%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+}
+#ss-prev-button-div button, #ss-next-button-div button {
+    border: 0;
+    color: white;
+    background-color: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .08s;
+
+    border-radius: 5px;
+}
+#ss-prev-button-div button:hover, #ss-next-button-div button:hover {
+    cursor: pointer;
+    background-color: rgb(101, 101, 101);
+}
+#ss-prev-button-div {
+    left: 0;
+}
+#ss-next-button-div {
+    right: 0;
+}
+#ss-position-3 {
+    animation-name: itemOne;
+    width: 750px;
+    height: 300px;
+    left: 243px;
+    top: 20px;
+    z-index: 3;
+
+    transition-duration: .5s;
+}
+#ss-position-2, #ss-position-4 {
+    top: 42px;
+    height: 255px;
+    width: 637.5px;
+    z-index: 2;
+    transition-duration: .5s;
+}
+#ss-position-2 {
+    left: 178px;
+}
+#ss-position-4 {
+    left: 422px;
+}
+#ss-position-1, #ss-position-5{
+    width: 525px;
+    height: 210px;
+    top: 64px;
+    z-index: 1;
+    transition-duration: .5s;
+}
+#ss-position-1 {
+    left: 112px;
+}
+#ss-position-5 {
+    left: 598px;
+}
+/*
+@keyframes itemOne {
+    from()
+    to()
+} */
+.slideshow-item:not(.slideshow-item#ss-position-3) .ss-page-left {
+    width: 100%;
+    height: 100%;
+}
+#ss-position-3 .ss-page-left {
+    width: 530px;
+    height: 100%;
+    position: relative;
+}
+.ss-page-left img {
+    width: 100%;
+    height: 100%;
+}
+.ss-video-buttons {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 10px 0 10px;
+    height: 40.100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: inherit;
+}
+.ss-video-buttons div {
+    display: flex;
+    flex-direction: row;
+}
+.ss-video-buttons div button {
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    border-radius: 3px;
+    background-color: inherit;
+    color: white;
+}
+.ss-video-buttons div form input {
+    visibility: hidden;
+    width: 110px;
+}
+/* do this later with jquery */
+.ss-video-buttons button:hover {
+    background-color: rgba(192, 192, 192, 0.3);
+}
+.ss-vb-left button {
+    font-size: 24px;
+}
+.ss-vb-right button {
+    font-size: 15px;
+}
+.heading {
+    padding: 8px 0;
+}
+.heading p {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: white;
+}
+.highlighted-text {
+    color: rgb(202, 142, 255);
+    text-decoration: none;
+}
+.highlighted-text:hover {
+    text-decoration: underline;
+    color: rgb(189, 113, 255);
+    cursor: pointer;
+}
+.live-channels {
+    margin-top: 10px;
+}
+.lc-row {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    width: 100%;
+}
+.live-channel {
+    width: 301px;
+    height: 280.688px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    margin-right: 10px;
+}
+.lc-video {
+    position: relative;
+    width: 100%;
+    height: 170px;
+    margin-bottom: 10px;
+}
+.lc-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.lc-live-badge {
+    position: absolute;
+    top: 0px;
+    left: 00px;
+    margin: 10px;
+    height: 19.500px;
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
+}
+.lc-time-badge {
+    background-color: rgba(57, 57, 57, 0.85);
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 19.500px;
+    padding: 0 5px;
+    margin: 10px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+}
+.lc-time-badge i {
+    color: red;
+    font-size: 13px;
+    margin: 0 2.6px;
+}
+.lc-viewer-count {
+    background-color: rgba(36, 36, 36, 0.9);
+    color: white;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 19.500px;
+    padding: 0 4px;
+    font-size: 13px;
+    margin: 10px;
+    border-radius: 2px;
+}
+.lc-description {
+    height: 89.600px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.lc-pfp-container {
+    height: 100%;
+    width: 40px;
+    margin-right: 10px;
+}
+.lc-pfp-container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.lc-pfp-container img:hover {
+    cursor: pointer;
+}
+.lc-description-text {
+    width: 227.550px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.lc-description-text div {
+    width: 100%;
+}
+.lc-description-text div p {
+    display: inline-block;
+    margin: 0;
+}
+.stream-description {
+    height: 20.600px;
+    margin-top: -6px;
+    margin-bottom: 4px;
+}
+/* gc added */
+.stream-description a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+}
+.lc-channel-name, .lc-stream-content {
+    height: 19.5px;
+    display: flex;
+    align-items: center;
+}
+.lc-channel-name p, .lc-stream-content p {
+    color: rgb(189, 189, 189);
+    font-size: 13px;
+    font-weight: 500;
+}
+.lc-channel-name p:hover {
+    cursor: pointer;
+    transition: 0.1s;
+}
+.gc-name span:hover, .gc-viewers p:hover, .lc-stream-content p:hover, .stream-description a:hover {
+    color: rgb(214, 109, 255);
+    cursor: pointer;
+    transition: 0.1s;
+}
+.gc-description-bottom button, .lc-stream-info button {
+    border: 0;
+    background-color: rgb(44, 44, 44);
+    color: rgb(213, 213, 213);
+    height: 20px;
+    padding: 0 10px;
+    font-size: 12px;
+    margin-bottom: 4px;
+    border-radius: 25px;
+    letter-spacing: -0.1px;
+}
+.gc-description-bottom button:hover, .lc-stream-info button:hover {
+    background-color: rgb(54, 54, 54);
+    transition: 0.2s;
+}
+.lc-options {
+    width: 27.45px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.gc-more button, .lc-options button {
+    width: 24px;
+    height: 24px;
+    border-radius: 2px;
+    padding: 0;
+    border: 0;
+    margin-top: -5px;
+    margin-right: -1px;
+    background-color: inherit;
+}
+.gc-more button:hover, .lc-options button:hover {
+    background-color: rgb(46, 46, 46);
+}
+.gc-more i, .lc-options i {
+    font-size: 16px;
+    color: white;
+    margin-bottom: 2px;
+    padding: 0;
+}
+
+.show-more {
+    width: 100%;
+    height: 30px;
+    margin-top: -2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.show-more div {
+    height: 100%;
+}
+.show-more-div {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.show-more-div button {
+    background-color: inherit;
+    border: 0;
+    color: rgb(212, 142, 255);
+    font-size: 12px;
+    font-weight: 700;
+    width: 115.375px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 6px;
+}
+.show-more-div button:hover {
+    background-color: rgb(47, 47, 47);
+    color: white;
+    transition: 0.1s;
+}
+.show-more-div button p {
+    margin: 0;
+}
+.show-more-div button i {
+    font-size: 14px;
+}
+.center-line-div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.center-line-div div {
+    height: 1px;
+    width: 100%;
+    background-color: rgb(47, 47, 47);
+}
+#categories {
+    height: 62.200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 24px;
+    padding-left: 3px;
+}
+.category {
+    display: inline-flex;
+    justify-content: start;
+    align-items: center;
+    width: 240px;
+    height: 46px;
+    margin-right: 7px;
+    background-color: rgb(118, 33, 255);
+    border-radius: 7px;
+    border: 0;
+}
+.category:hover {
+    background-color: rgb(100, 52, 177);
+    transition: 0.1s;
+}
+.category p {
+    margin: 0 0 0 10px;
+    font-size: 22px;
+    font-weight: bolder;
+    color: white;
+}
+#game-categories {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid rgb(47, 47, 47);
+    margin-bottom: 23px;
+}
+#gc-row {
+    width: 100%;
+    height: 288px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.game-category {
+    width: 145.775px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.gc-img-div {
+    height: 194.363px;
+    width: 100%;
+}
+.gc-img-div img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.gc-description {
+    height: 78.5px;
+    width: 100%;
+}
+.gc-description-top {
+    height: 48.5px;
+}
+.gc-description-top p {
+    margin-bottom: 0;
+}
+.gc-name {
+    color: white;
+    height: 24px;
+    width: 100%;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-flex;
+    justify-content: space-between;
+}
+.gc-more {
+    width: 24px;
+    height: 24px;
+    background-color: inherit;
+    border: 0;
+}
+.gc-viewers {
+    width: 100%;
+    height: 19.5px;
+    color: rgb(156, 156, 156);
+    font-size: 13px;
+    font-weight: 500;
+}
+.gc-name span, .gc-viewers p {
+    display: inline;
+}
+.gc-description-bottom {
+    height: 25px;
+    margin-top: 5px;
+    display: flex;
+    align-items: start;
+}
+.gc-description-bottom button {
+    margin-right: 4px;
+}

@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link href="https://fonts.cdnfonts.com/css/roobert" rel="stylesheet">
+    <link rel="stylesheet" href="twitch.css">
+</head>
+<body>
+    <nav id="header" class="navbar navbar-collapse navbar-expand text-white position-fixed d-flex justify-content-between align-items-center bg-dark">
+        <div  class="mt-1">
+            <i id="twitch-icon" class="bi bi-twitch ms-2 me-3"></i>
+            <button class="btn btn-dark fw-bold me-2 mb-1 header-left-button">Following</button>
+            <button class="btn btn-dark fw-bold mb-1 me-3 header-left-button">Browse</button>
+            <button class="btn btn-dark pt-0 px-1"><i class="bi bi-three-dots-vertical" id="three-dots"></i></button>
+        </div>
+        <div>
+            <form>
+                <div class="input-group d-flex align-items-center" id="searchbar">
+                    <input class="form-control text-light justify-content-center bg-dark ps-2" id="searchbar-input" type="search" placeholder="Search">
+                    <button class="btn btn-dark border-0 h-100 px-0" id="search-button"><i class="bi bi-search px-2"></i></button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <button class="btn btn-dark me-1 px-2 pt-1"><i class="bi bi-archive"></i></button>
+            <button class="btn btn-dark me-1 px-2 pt-0"><i class="bi bi-alarm"></i></button>
+            <button class="btn btn-dark me-1 px-2 pt-0"><i class="bi bi-chat"></i></button>
+            <button id="gb-button" class="btn btn-dark rounded-1 justify-content-center align-items-center">
+                <i class="bi bi-award me-1"></i>
+                <span class="d-none d-xl-inline text-light fw-semibold">Get Ad-Free</span>
+            </button>
+            <div id="fcc" class="position-relative d-inline-block">
+                <button class="btn btn-dark px-2 py-1 me-0"><i class="bi bi-cloud p-0"></i></button>
+                <span class="badge rounded-pill bg-secondary position-absolute top-0 end-0">1</span>
+            </div>
+            <button class="btn p-0 rounded-pill me-2"><img id="person-img" src="images/person.png" class="img-fluid rounded-circle" alt=""></button>
+        </div>
+    </nav>
+
+    <section id="sidebar" class="navbar">
+        <div>
+            <div class="sidebar-header">
+                <span class="navbar-brand text-white fw-bold fs-6">For You</span>
+                <button class="btn btn-dark" id="sidebar-collapse"><i class="bi bi-arrow-left p-0"></i></button>
+            </div>
+            <div class="sidebar-header">
+                <span id="fc-text" class="navbar-brand text-light text-uppercase">followed channels</span>
+                <button class="btn btn-dark" id="sidebar-collapse"><i class="bi bi-arrow-down-up p-0"></i></button>
+            </div>
+            <div id="followed-channels">
+                <div class="channel">
+                    <div class="fc-left">
+                        <div class="pfp-container">
+                            <img class="channel-pfp" src="images/person.png" alt="">
+                        </div>
+                        <div class="channel-texts">
+                            <div class="channel-name-div">
+                                <p class="channel-name">Chess</p>
+                            </div>
+                            <div class="stream-content-div">
+                                <p class="stream-content">Chess</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="fc-right-live">
+                            <p><span class="live-symbol">&#128308;</span> 6.4K</p>
+                        </div>
+                </div>
+                <div class="channel">
+                    <div class="fc-left">
+                        <div class="pfp-container">
+                            <img class="channel-pfp" src="images/person.png" alt="">
+                        </div>
+                        <div class="channel-texts">
+                            <div class="channel-name-div">
+                                <p class="channel-name">Chess</p>
+                            </div>
+                            <div class="stream-content-div">
+                                <p class="stream-content">Chess</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="fc-right-live">
+                            <p><span class="live-symbol">&#128308;</span> 6.4K</p>
+                        </div>
+                </div>
+                <div class="channel">
+                    <div class="offline-fc-left">
+                        <div class="pfp-container">
+                            <img class="channel-pfp" src="images/person.png" alt="">
+                        </div>
+                        <p class="channel-name">Chess</p>
+                    </div>
+                        <p class="offline-text">Offline</p>
+                </div>
+                <div class="channel">
+                    <div class="offline-fc-left">
+                        <div class="pfp-container">
+                            <img class="channel-pfp" src="images/person.png" alt="">
+                        </div>
+                        <p class="channel-name">Chess</p>
+                    </div>
+                        <p class="offline-text">Offline</p>
+                </div>
+                <div class="channel">
+                    <div class="offline-fc-left">
+                        <div class="pfp-container">
+                            <img class="channel-pfp" src="images/person.png" alt="">
+                        </div>
+                        <p class="channel-name">Chess</p>
+                    </div>
+                        <p class="offline-text">Offline</p>
+                </div>
+            </div>
+            <button type="button" class="sb-show-more">Show More</button>
+            <div class="text-light">
+                <p class="rc-text">RECOMMENDED CHANNELS</p>
+                <div id="recommended-channels">
+                    <div class="channel">
+                        <div class="fc-left">
+                            <div class="pfp-container">
+                                <img class="channel-pfp" src="images/person.png" alt="">
+                            </div>
+                            <div class="channel-texts">
+                                <div class="channel-name-div">
+                                    <p class="channel-name">Chess</p>
+                                </div>
+                                <div class="stream-content-div">
+                                    <p class="stream-content">Chess</p>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fc-right-live">
+                                <p><span class="live-symbol">&#128308;</span> 6.4K</p>
+                            </div>
+                    </div>
+                    <div class="channel">
+                        <div class="fc-left">
+                            <div class="pfp-container">
+                                <img class="channel-pfp" src="images/person.png" alt="">
+                            </div>
+                            <div class="channel-texts">
+                                <div class="channel-name-div">
+                                    <p class="channel-name">Chess</p>
+                                </div>
+                                <div class="stream-content-div">
+                                    <p class="stream-content">Chess</p>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fc-right-live">
+                                <p><span class="live-symbol">&#128308;</span> 6.4K</p>
+                            </div>
+                    </div>
+                    <div class="channel">
+                        <div class="fc-left">
+                            <div class="pfp-container">
+                                <img class="channel-pfp" src="images/person.png" alt="">
+                            </div>
+                            <div class="channel-texts">
+                                <div class="channel-name-div">
+                                    <p class="channel-name">Chess</p>
+                                </div>
+                                <div class="stream-content-div">
+                                    <p class="stream-content">Chess</p>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fc-right-live">
+                                <p><span class="live-symbol">&#128308;</span> 6.4K</p>
+                            </div>
+                    </div>
+                    <div class="channel">
+                        <div class="fc-left">
+                            <div class="pfp-container">
+                                <img class="channel-pfp" src="images/person.png" alt="">
+                            </div>
+                            <div class="channel-texts">
+                                <div class="channel-name-div">
+                                    <p class="channel-name">Chess</p>
+                                </div>
+                                <div class="stream-content-div">
+                                    <p class="stream-content">Chess</p>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fc-right-live">
+                                <p><span class="live-symbol">&#128308;</span> 6.4K</p>
+                            </div>
+                    </div>
+                    <div class="channel">
+                        <div class="fc-left">
+                            <div class="pfp-container">
+                                <img class="channel-pfp" src="images/person.png" alt="">
+                            </div>
+                            <div class="channel-texts">
+                                <div class="channel-name-div">
+                                    <p class="channel-name">Chess</p>
+                                </div>
+                                <div class="stream-content-div">
+                                    <p class="stream-content">Chess</p>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fc-right-live">
+                                <p><span class="live-symbol">&#128308;</span> 6.4K</p>
+                            </div>
+                    </div>
+                    <div class="channel">
+                        <div class="fc-left">
+                            <div class="pfp-container">
+                                <img class="channel-pfp" src="images/person.png" alt="">
+                            </div>
+                            <div class="channel-texts">
+                                <div class="channel-name-div">
+                                    <p class="channel-name">Chess</p>
+                                </div>
+                                <div class="stream-content-div">
+                                    <p class="stream-content">Chess</p>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="fc-right-live">
+                                <p><span class="live-symbol">&#128308;</span> 6.4K</p>
+                            </div>
+                    </div>
+                </div>
+                <button type="button" class="sb-show-more">Show More</button>
+            </div>
+        </div>
+    </section>
+    <section id="main">
+        <div id="slideshow-container">
+            <div id="ss-prev-button-div">
+                <button id="ss-prev-button">
+                    <i class="bi bi-chevron-left"></i>
+                </button>
+            </div>
+            <div id="ss-position-1" class="slideshow-item">
+                <div class="ss-page-left">
+                    <img src="images/nakoshi-2.jfif" alt="">
+                </div>
+            </div>
+            <div id="ss-position-2" class="slideshow-item">
+                <div class="ss-page-left">
+                    <img src="images/nakoshi-1.jpg" alt="">
+                </div>
+            </div>
+            <div id="ss-position-3" class="slideshow-item">
+                <div class="ss-page-left">
+                    <img src="images/nakoshi-3.webp" alt="">
+                </div>
+                <div class="slideshow-page-right"></div>
+            </div>
+            <div id="ss-position-4" class="slideshow-item">
+                <div class="ss-page-left">
+                    <img src="images/nakoshi-1.jpg" alt="">
+                </div>
+            </div>
+            <div id="ss-position-5" class="slideshow-item">
+                <div class="ss-page-left">
+                    <img src="images/nakoshi-2.jfif" alt="">
+                </div>
+            </div>
+            <div class="slideshow-item">
+                <div class="ss-page-left">
+                    <img src="images/nakoshi-1.jpg" alt="">
+                </div>
+            </div>
+            <div class="slideshow-item">
+                <div class="ss-page-left">
+                    <img src="images/nakoshi-2.jfif" alt="">
+                </div>
+            </div>
+            <div class="slideshow-item">
+                <div class="ss-page-left">
+                    <img src="images/nakoshi-3.webp" alt="">
+                </div>
+            </div>
+            <div class="slideshow-item">
+                <div class="ss-page-left">
+                    <img src="images/nakoshi-2.jfif" alt="">
+                </div>
+            </div>
+            <div class="slideshow-item">
+                <div class="ss-page-left">
+                    <img src="images/nakoshi-3.webp" alt="">
+                </div>
+            </div>
+            <div class="slideshow-item">
+                <div class="ss-page-left">
+                    <img src="images/nakoshi-1.jpg" alt="">
+                </div>
+            </div>
+            <div id="ss-next-button-div">
+                <button id="ss-next-button">
+                    <i class="bi bi-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    
+        <div class="live-channels">
+            <div class="heading">
+                <p><a class="highlighted-text">Live channels</a> we think you'll like</p>
+            </div>
+            <div class="lc-row">
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>Button</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="show-more">
+                <div class="center-line-div">
+                    <div></div>
+                </div>
+                <div class="show-more-div flexbox">
+                    <button class="flexbox">
+                        <p>Show more</p>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="center-line-div">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="live-channels">
+            <div class="heading">
+                <p><a class="highlighted-text">Live channels</a> we think you'll like</p>
+            </div>
+            <div class="lc-row">
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="show-more">
+                <div class="center-line-div">
+                    <div></div>
+                </div>
+                <div class="show-more-div flexbox">
+                    <button class="flexbox">
+                        <p>Show more</p>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="center-line-div">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div id="categories">
+            <button class="category"><p>Games</p></button>
+            <button class="category"><p>IRL</p></button>
+            <button class="category"><p>Music</p></button>
+            <button class="category"><p>Esports</p></button>
+            <button class="category"><p>Creative</p></button>
+        </div>
+        <div id="game-categories">
+            <div class="heading">
+                <p><a class="highlighted-text">Live channels</a> we think you'll like</p>
+            </div>
+            <div id="gc-row">
+                <div class="game-category">
+                    <div class="gc-img-div">
+                        <img src="images/person.png" alt="">
+                    </div>
+                    <div class="gc-description">
+                        <div class="gc-description-top">
+                            <div class="gc-name"><span>Chess</span> <button class="gc-more flexbox"><i class="bi bi-three-dots-vertical"></i></button></div>
+                            <div class="gc-viewers"><p>23.4K viewers</p></div>
+                        </div>
+                        <div class="gc-description-bottom">
+                            <button>Strategy</button>
+                            <button>Action</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-category">
+                    <div class="gc-img-div">
+                        <img src="images/person.png" alt="">
+                    </div>
+                    <div class="gc-description">
+                        <div class="gc-description-top">
+                            <div class="gc-name"><span>Chess</span> <button class="gc-more flexbox"><i class="bi bi-three-dots-vertical"></i></button></div>
+                            <div class="gc-viewers"><p>23.4K viewers</p></div>
+                        </div>
+                        <div class="gc-description-bottom">
+                            <button>Strategy</button>
+                            <button>Action</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-category">
+                    <div class="gc-img-div">
+                        <img src="images/person.png" alt="">
+                    </div>
+                    <div class="gc-description">
+                        <div class="gc-description-top">
+                            <div class="gc-name"><span>Chess</span> <button class="gc-more flexbox"><i class="bi bi-three-dots-vertical"></i></button></div>
+                            <div class="gc-viewers"><p>23.4K viewers</p></div>
+                        </div>
+                        <div class="gc-description-bottom">
+                            <button>Strategy</button>
+                            <button>Action</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-category">
+                    <div class="gc-img-div">
+                        <img src="images/person.png" alt="">
+                    </div>
+                    <div class="gc-description">
+                        <div class="gc-description-top">
+                            <div class="gc-name"><span>Chess</span> <button class="gc-more flexbox"><i class="bi bi-three-dots-vertical"></i></button></div>
+                            <div class="gc-viewers"><p>23.4K viewers</p></div>
+                        </div>
+                        <div class="gc-description-bottom">
+                            <button>Strategy</button>
+                            <button>Action</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-category">
+                    <div class="gc-img-div">
+                        <img src="images/person.png" alt="">
+                    </div>
+                    <div class="gc-description">
+                        <div class="gc-description-top">
+                            <div class="gc-name"><span>Chess</span> <button class="gc-more flexbox"><i class="bi bi-three-dots-vertical"></i></button></div>
+                            <div class="gc-viewers"><p>23.4K viewers</p></div>
+                        </div>
+                        <div class="gc-description-bottom">
+                            <button>Strategy</button>
+                            <button>Action</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-category">
+                    <div class="gc-img-div">
+                        <img src="images/person.png" alt="">
+                    </div>
+                    <div class="gc-description">
+                        <div class="gc-description-top">
+                            <div class="gc-name"><span>Chess</span> <button class="gc-more flexbox"><i class="bi bi-three-dots-vertical"></i></button></div>
+                            <div class="gc-viewers"><p>23.4K viewers</p></div>
+                        </div>
+                        <div class="gc-description-bottom">
+                            <button>Strategy</button>
+                            <button>Action</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-category">
+                    <div class="gc-img-div">
+                        <img src="images/person.png" alt="">
+                    </div>
+                    <div class="gc-description">
+                        <div class="gc-description-top">
+                            <div class="gc-name"><span>Chess</span> <button class="gc-more flexbox"><i class="bi bi-three-dots-vertical"></i></button></div>
+                            <div class="gc-viewers"><p>23.4K viewers</p></div>
+                        </div>
+                        <div class="gc-description-bottom">
+                            <button>Strategy</button>
+                            <button>Action</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="game-category">
+                    <div class="gc-img-div">
+                        <img src="images/person.png" alt="">
+                    </div>
+                    <div class="gc-description">
+                        <div class="gc-description-top">
+                            <div class="gc-name"><span>Chess</span> <button class="gc-more flexbox"><i class="bi bi-three-dots-vertical"></i></button></div>
+                            <div class="gc-viewers"><p>23.4K viewers</p></div>
+                        </div>
+                        <div class="gc-description-bottom">
+                            <button>Strategy</button>
+                            <button>Action</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="live-channels">
+            <div class="heading">
+                <p><a class="highlighted-text">Live channels</a> we think you'll like</p>
+            </div>
+            <div class="lc-row">
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="show-more">
+                <div class="center-line-div">
+                    <div></div>
+                </div>
+                <div class="show-more-div flexbox">
+                    <button class="flexbox">
+                        <p>Show more</p>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="center-line-div">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="live-channels">
+            <div class="heading">
+                <p><a class="highlighted-text">Live channels</a> we think you'll like</p>
+            </div>
+            <div class="lc-row">
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="live-channel">
+                    <div class="lc-video">
+                        <img class="lc-img" src="images/person.png" alt="">
+                        <span class="lc-live-badge flexbox">LIVE</span>
+                        <span class="lc-time-badge flexbox"><i class="bi bi-clock"></i>2:09</span>
+                        <span class="lc-viewer-count flexbox">2.7K viewers</span>
+                    </div>
+                    <div class="lc-description">
+                        <div class="lc-pfp-container">
+                            <img src="images/person.png" alt="">
+                        </div>
+                        <div class="lc-description-text">
+                            <div class="stream-description">
+                                <a href="#">Magnus, Anish, Hikaru, Fabiano...</a>
+                            </div>
+                            <div class="lc-channel-name">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-content">
+                                <p>Chess</p>
+                            </div>
+                            <div class="lc-stream-info">
+                                <button>English</button>
+                                <button>Button</button>
+                                <button>Button</button>
+                            </div>
+                        </div>
+                        <div class="lc-options">
+                            <button class="flexbox"><i class="bi bi-three-dots-vertical"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="show-more">
+                <div class="center-line-div">
+                    <div></div>
+                </div>
+                <div class="show-more-div flexbox">
+                    <button class="flexbox">
+                        <p>Show more</p>
+                        <i class="bi bi-chevron-down"></i>
+                    </button>
+                </div>
+                <div class="center-line-div">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="twitch.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
