@@ -71,23 +71,12 @@ for(i = 0; i < ssItems.length; i++) {
 }
 
 ssNextButton.addEventListener('click', function() {
-    for(i = ssItems.length; i > 0; i--) {
-        // if(ssItems[i] === document.getElementById('ss-position-1')) {
-        //     // if(i + 5 < ssItems.length) {
-        //     //     ssItems[i + 1].id = 'ss-position-1';
-        //     //     ssItems[i + 2].id = 'ss-position-2';
-        //     //     ssItems[i + 3].id = 'ss-position-3';
-        //     //     ssItems[i + 4].id = 'ss-position-4';
-        //     //     ssItems[i + 5].id = 'ss-position-5';
-        //     //     ssItems[i].id = '';
-        //     //     break
-        // //     // }
-        // }
-        if(ssItems[i] === document.getElementById('ss-position-5')) {
-            if(i + 1 < ssItems.length) {
+    for(i = ssItems.length; i > -1; i--) {
+        if(ssItems[i] === document.getElementById('ss-position-1')) {
+            if(i + 5 < ssItems.length) {
                 let ii = i;
-                ssItems[i + 1].id = 'ss-position-5';
-                ssItems[i + 1].animate ([
+                ssItems[i + 5].id = 'ss-position-5';
+                ssItems[i + 5].animate ([
                     {left: '920px', opacity: '0', width: '250px', height: '150px'},
                     {left: '598px', opacity: '1', width: '525px', height: '210px'}
                 ], {
@@ -95,12 +84,12 @@ ssNextButton.addEventListener('click', function() {
                     iterations: 1,
                     easing: "ease"
                 })
-                ssItems[i].id = 'ss-position-4';
-                ssItems[i - 1].id = 'ss-position-3';
-                ssItems[i - 2].id = 'ss-position-2';
-                ssItems[i - 3].id = 'ss-position-1';
+                ssItems[i + 4].id = 'ss-position-4';
+                ssItems[i + 3].id = 'ss-position-3';
+                ssItems[i + 2].id = 'ss-position-2';
+                ssItems[i + 1].id = 'ss-position-1';
 
-                ssItems[i - 4].animate([
+                ssItems[i].animate([
                     {left: '112px', opacity: '1', width: '525px', height: '210px'},
                     {left: '70px', opacity: '0', width: '250px', height: '150px'}
                 ], {
@@ -109,7 +98,142 @@ ssNextButton.addEventListener('click', function() {
                     easing: "ease"
                 });
                 setTimeout(function() {
-                    ssItems[ii - 4].id = '';
+                    ssItems[ii].id = '';
+                }, 1000)
+                break
+            } else if(i + 5 == ssItems.length){
+                let ii = i;
+                ssItems[0].id = 'ss-position-5';
+                ssItems[0].animate ([
+                    {left: '920px', opacity: '0', width: '250px', height: '150px'},
+                    {left: '598px', opacity: '1', width: '525px', height: '210px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                })
+                ssItems[i + 4].id = 'ss-position-4';
+                ssItems[i + 3].id = 'ss-position-3';
+                ssItems[i + 2].id = 'ss-position-2';
+                ssItems[i + 1].id = 'ss-position-1';
+                ssItems[i].animate([
+                    {left: '112px', opacity: '1', width: '525px', height: '210px'},
+                    {left: '70px', opacity: '0', width: '250px', height: '150px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                });
+                setTimeout(function() {
+                    ssItems[ii].id = '';
+                }, 1000)
+                break
+            } else if(i + 4 == ssItems.length){
+                let ii = i;
+                ssItems[1].id = 'ss-position-5';
+                ssItems[1].animate ([
+                    {left: '920px', opacity: '0', width: '250px', height: '150px'},
+                    {left: '598px', opacity: '1', width: '525px', height: '210px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                })
+                ssItems[0].id = 'ss-position-4';
+                ssItems[i + 3].id = 'ss-position-3';
+                ssItems[i + 2].id = 'ss-position-2';
+                ssItems[i + 1].id = 'ss-position-1';
+                ssItems[i].animate([
+                    {left: '112px', opacity: '1', width: '525px', height: '210px'},
+                    {left: '70px', opacity: '0', width: '250px', height: '150px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                });
+                setTimeout(function() {
+                    ssItems[ii].id = '';
+                }, 1000)
+                break
+            } else if(i + 3 == ssItems.length){
+                let ii = i;
+                ssItems[2].id = 'ss-position-5';
+                ssItems[2].animate ([
+                    {left: '920px', opacity: '0', width: '250px', height: '150px'},
+                    {left: '598px', opacity: '1', width: '525px', height: '210px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                })
+                ssItems[1].id = 'ss-position-4';
+                ssItems[0].id = 'ss-position-3';
+                ssItems[i + 2].id = 'ss-position-2';
+                ssItems[i + 1].id = 'ss-position-1';
+                ssItems[i].animate([
+                    {left: '112px', opacity: '1', width: '525px', height: '210px'},
+                    {left: '70px', opacity: '0', width: '250px', height: '150px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                });
+                setTimeout(function() {
+                    ssItems[ii].id = '';
+                }, 1000)
+                break
+            } else if(i + 2 == ssItems.length){
+                let ii = i;
+                ssItems[3].id = 'ss-position-5';
+                ssItems[3].animate ([
+                    {left: '920px', opacity: '0', width: '250px', height: '150px'},
+                    {left: '598px', opacity: '1', width: '525px', height: '210px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                })
+                ssItems[2].id = 'ss-position-4';
+                ssItems[1].id = 'ss-position-3';
+                ssItems[0].id = 'ss-position-2';
+                ssItems[i + 1].id = 'ss-position-1';
+                ssItems[i].animate([
+                    {left: '112px', opacity: '1', width: '525px', height: '210px'},
+                    {left: '70px', opacity: '0', width: '250px', height: '150px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                });
+                setTimeout(function() {
+                    ssItems[ii].id = '';
+                }, 1000)
+                break
+            } else if(i + 1 == ssItems.length){
+                let ii = i;
+                ssItems[4].id = 'ss-position-5';
+                ssItems[4].animate ([
+                    {left: '920px', opacity: '0', width: '250px', height: '150px'},
+                    {left: '598px', opacity: '1', width: '525px', height: '210px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                })
+                ssItems[3].id = 'ss-position-4';
+                ssItems[2].id = 'ss-position-3';
+                ssItems[1].id = 'ss-position-2';
+                ssItems[0].id = 'ss-position-1';
+                ssItems[i].animate([
+                    {left: '112px', opacity: '1', width: '525px', height: '210px'},
+                    {left: '70px', opacity: '0', width: '250px', height: '150px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                });
+                setTimeout(function() {
+                    ssItems[ii].id = '';
                 }, 1000)
                 break
             }
@@ -118,10 +242,21 @@ ssNextButton.addEventListener('click', function() {
     addP3Style()
 });
 ssPrevButton.addEventListener('click', function() {
-    for(i = ssItems.length; i > 0; i--) {
+    for(i = ssItems.length; i > -1; i--) {
         if(ssItems[i] === document.getElementById('ss-position-5')) {
             if(i - 5 >= 0) {
                 let ii = i;
+                ssItems[i].animate([
+                    {left: '598px', opacity: '1', width: '525px', height: '210px'},
+                    {left: '920px', opacity: '0', width: '250px', height: '150px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                });
+                setTimeout(function() {
+                    ssItems[ii].id = '';
+                }, 1000)
                 ssItems[i - 1].id = 'ss-position-5';
                 ssItems[i - 2].id = 'ss-position-4';
                 ssItems[i - 3].id = 'ss-position-3';
@@ -135,6 +270,9 @@ ssPrevButton.addEventListener('click', function() {
                     iterations: 1,
                     easing: "ease"
                 })
+                break
+            } else if(i - 5 === -1){
+                let ii = i;
                 ssItems[i].animate([
                     {left: '598px', opacity: '1', width: '525px', height: '210px'},
                     {left: '920px', opacity: '0', width: '250px', height: '150px'}
@@ -146,6 +284,127 @@ ssPrevButton.addEventListener('click', function() {
                 setTimeout(function() {
                     ssItems[ii].id = '';
                 }, 1000)
+                ssItems[i - 1].id = 'ss-position-5';
+                ssItems[i - 2].id = 'ss-position-4';
+                ssItems[i - 3].id = 'ss-position-3';
+                ssItems[i - 4].id = 'ss-position-2';
+                ssItems[ssItems.length - 1].id = 'ss-position-1';
+                ssItems[ssItems.length - 1].animate ([
+                    {left: '70px', opacity: '0', width: '250px', height: '150px'},
+                    {left: '112px;', opacity: '1', width: '525px', height: '210px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                })
+                break
+            } else if(i - 4 === -1){
+                let ii = i;
+                ssItems[i].animate([
+                    {left: '598px', opacity: '1', width: '525px', height: '210px'},
+                    {left: '920px', opacity: '0', width: '250px', height: '150px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                });
+                setTimeout(function() {
+                    ssItems[ii].id = '';
+                }, 1000)
+                ssItems[i - 1].id = 'ss-position-5';
+                ssItems[i - 2].id = 'ss-position-4';
+                ssItems[i - 3].id = 'ss-position-3';
+                ssItems[ssItems.length - 1].id = 'ss-position-2';
+                ssItems[ssItems.length - 2].id = 'ss-position-1';
+                ssItems[ssItems.length - 2].animate ([
+                    {left: '70px', opacity: '0', width: '250px', height: '150px'},
+                    {left: '112px;', opacity: '1', width: '525px', height: '210px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                })
+                break
+            } else if(i - 3 === -1){
+                let ii = i;
+                ssItems[i].animate([
+                    {left: '598px', opacity: '1', width: '525px', height: '210px'},
+                    {left: '920px', opacity: '0', width: '250px', height: '150px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                });
+                setTimeout(function() {
+                    ssItems[ii].id = '';
+                }, 1000)
+                ssItems[i - 1].id = 'ss-position-5';
+                ssItems[i - 2].id = 'ss-position-4';
+                ssItems[ssItems.length - 1].id = 'ss-position-3';
+                ssItems[ssItems.length - 2].id = 'ss-position-2';
+                ssItems[ssItems.length - 3].id = 'ss-position-1';
+                ssItems[ssItems.length - 3].animate ([
+                    {left: '70px', opacity: '0', width: '250px', height: '150px'},
+                    {left: '112px;', opacity: '1', width: '525px', height: '210px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                })
+                break
+            } else if(i - 2 === -1){
+                let ii = i;
+                ssItems[i].animate([
+                    {left: '598px', opacity: '1', width: '525px', height: '210px'},
+                    {left: '920px', opacity: '0', width: '250px', height: '150px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                });
+                setTimeout(function() {
+                    ssItems[ii].id = '';
+                }, 1000)
+                ssItems[i - 1].id = 'ss-position-5';
+                ssItems[ssItems.length - 1].id = 'ss-position-4';
+                ssItems[ssItems.length - 2].id = 'ss-position-3';
+                ssItems[ssItems.length - 3].id = 'ss-position-2';
+                ssItems[ssItems.length - 4].id = 'ss-position-1';
+                ssItems[ssItems.length - 4].animate ([
+                    {left: '70px', opacity: '0', width: '250px', height: '150px'},
+                    {left: '112px;', opacity: '1', width: '525px', height: '210px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                })
+                break
+            } else if(i - 1 === -1){
+                let ii = i;
+                ssItems[i].animate([
+                    {left: '598px', opacity: '1', width: '525px', height: '210px'},
+                    {left: '920px', opacity: '0', width: '250px', height: '150px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                });
+                setTimeout(function() {
+                    ssItems[ii].id = '';
+                }, 1000)
+                ssItems[ssItems.length - 1].id = 'ss-position-5';
+                ssItems[ssItems.length - 2].id = 'ss-position-4';
+                ssItems[ssItems.length - 3].id = 'ss-position-3';
+                ssItems[ssItems.length - 4].id = 'ss-position-2';
+                ssItems[ssItems.length - 5].id = 'ss-position-1';
+                ssItems[ssItems.length - 5].animate ([
+                    {left: '70px', opacity: '0', width: '250px', height: '150px'},
+                    {left: '112px;', opacity: '1', width: '525px', height: '210px'}
+                ], {
+                    duration: 1000,
+                    iterations: 1,
+                    easing: "ease"
+                })
                 break
             }
         }
