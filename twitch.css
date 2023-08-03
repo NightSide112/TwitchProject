@@ -280,9 +280,9 @@ body::-webkit-scrollbar {
     margin-bottom: 20px;
     position: relative;
 }
-.slideshow-item:not(#ss-position-1, #ss-position-2, #ss-position-3, #ss-position-4, #ss-position-5) {
+/* .slideshow-item:not(.slideshow-item:not(#ss-position-0 ,#ss-position-1, #ss-position-2, #ss-position-3, #ss-position-4, #ss-position-5, #ss-position-6) ,#ss-position-1, #ss-position-2, #ss-position-3, #ss-position-4, #ss-position-5) {
     display: none;
-}
+} */
 .slideshow-item {
     background-color: #0000ff;
     position: absolute;
@@ -322,6 +322,9 @@ body::-webkit-scrollbar {
 #ss-next-button-div {
     right: 0;
 }
+#ss-position-0, #ss-position-1, #ss-position-2, #ss-position-3, #ss-position-4, #ss-position-5, #ss-position-6 {
+    transition-duration: 1s;
+}
 #ss-position-3 {
     animation-name: itemOne;
     width: 750px;
@@ -329,15 +332,12 @@ body::-webkit-scrollbar {
     left: 243px;
     top: 20px;
     z-index: 3;
-
-    transition-duration: 1s;
 }
 #ss-position-2, #ss-position-4 {
     top: 42px;
     height: 255px;
     width: 637.5px;
     z-index: 2;
-    transition-duration: 1s;
 }
 #ss-position-2 {
     left: 178px;
@@ -350,13 +350,25 @@ body::-webkit-scrollbar {
     height: 210px;
     top: 64px;
     z-index: 1;
-    transition-duration: 1s;
 }
 #ss-position-1 {
     left: 112px;
 }
 #ss-position-5 {
     left: 598px;
+}
+#ss-position-0, #ss-position-6{
+    width: 355px;
+    height: 160px;
+    top: 82px;
+    z-index: 0;
+    opacity: 0;
+}
+#ss-position-0 {
+    left: 50px;
+}
+#ss-position-6 {
+    left: 830px;
 }
 /*
 @keyframes itemOne {
