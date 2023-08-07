@@ -13,64 +13,198 @@ const streamers = [
     {
         name: "Jack",
         image: "https://techbriefly.com/wp-content/uploads/2023/02/AI-impersonation-Fake-name-generators-this-person-does-not-exist-images-and-more-1.jpg",
-        subscibers: 2569
+        viewers: 2569,
+        game: "csgo"
     },
     {
         name: "Tom",
         image: "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=2000",
-        subscibers: 658
+        viewers: 658,
+        game: "fortnite",
     },
     {
         name: "Dan",
         image: "https://img.freepik.com/free-photo/emotions-people-concept-headshot-serious-looking-handsome-man-with-beard-looking-confident-determined_1258-26730.jpg?w=2000",
-        subscibers: 8303
+        viewers: 8303,
+        game: "call of duty"
     },
     {
         name: "Mia",
         image: "https://plus.unsplash.com/premium_photo-1664203068093-6f584b381ffd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBmYWNlfGVufDB8fDB8fHww&w=1000&q=80",
-        subscibers: 4498
+        viewers: 6983,
+        game: "chess"
     },
     {
         name: "Amelia",
         image: "https://static-bebeautiful-in.unileverservices.com/Flawless-skin-basics.jpg",
-        subscibers: 14765
+        viewers: 4498,
+        game: "tetris"
     },
     {
         name: "Henry",
         image: "https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/s93-pa-4802-01.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=b1e69abe76c9b6f333ad818a7a94d0da",
-        subscibers: 1279
+        viewers: 14765,
+        game: "hollow knight"
     },
     {
         name: "Emma",
         image: "https://images.pexels.com/photos/948873/pexels-photo-948873.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-948873.jpg&fm=jpg",
-        subscibers: 6983
+        viewers: 1279,
+        game: "devil may cry"
     },
     {
         name: "Abigail",
         image: "https://www.byrdie.com/thmb/aZWxblVz7BMxeObHtJEKX_ddV3c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txpce733110Uae300_Medium_4082489-df45caed45cd449b806f9ce16a20804a.jpg",
-        subscibers: 5223
+        viewers: 6983,
+        game: "devil may cry 2"
     },
     {
         name: "Noah",
         image: "https://www.realmenrealstyle.com/wp-content/uploads/2021/06/man-face.jpg",
-        subscibers: 20251
+        viewers: 5223,
+        game: "devil may cry 3"
     },
     {
         name: "James",
         image: "https://media.istockphoto.com/id/507995592/tr/foto%C4%9Fraf/pensive-man-looking-at-the-camera.jpg?s=612x612&w=0&k=20&c=KFLVwDo5zntyE0Rh2HuvZ-hLh3NCLlR10a7Jh9Zeuf8=",
-        subscibers: 9711
+        viewers: 9771,
+        game: "devil may cry 4"
     },
     {
         name: "Luna",
         image: "https://media.istockphoto.com/id/1258148390/photo/portrait-of-beautiful-young-woman-with-blonde-hair.jpg?s=612x612&w=0&k=20&c=_sqq-2a14lHFtSvmvf3E9aFnU0CXeFqrI65b-CDBlgU=",
-        subscibers: 33145
+        viewers: 33145,
+        game: "devil may cry 5"
     },
     {
         name: "Ava",
         image: "https://media.istockphoto.com/id/1324877086/photo/portrait-beautiful-young-woman-with-clean-fresh-skin.jpg?s=612x612&w=0&k=20&c=j_gQlG9owLn23HFGpnL6DhauOHHuVG2wcmZhnH75lqs=",
-        subscibers: 98765
+        viewers: 98765,
+        game: "god of war ll"
     }
-
+];
+let followers = [
+    {
+        name: "Jack",
+        profilePicture: "https://techbriefly.com/wp-content/uploads/2023/02/AI-impersonation-Fake-name-generators-this-person-does-not-exist-images-and-more-1.jpg",
+        viewers: 2569,
+        game: "csgo",
+        live: false
+    },
+    {
+        name: "Tom",
+        profilePicture: "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=2000",
+        viewers: 658,
+        game: "fortnite",
+        live: true
+    },
+    {
+        name: "Dan",
+        profilePicture: "https://img.freepik.com/free-photo/emotions-people-concept-headshot-serious-looking-handsome-man-with-beard-looking-confident-determined_1258-26730.jpg?w=2000",
+        viewers: 8303,
+        game: "call of duty",
+        live: false
+    },
+    {
+        name: "Emma",
+        profilePicture: "https://images.pexels.com/photos/948873/pexels-photo-948873.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-948873.jpg&fm=jpg",
+        viewers: 6983,
+        game: "chess",
+        live: false
+    },
+    {
+        name: "Mia",
+        profilePicture: "https://plus.unsplash.com/premium_photo-1664203068093-6f584b381ffd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBmYWNlfGVufDB8fDB8fHww&w=1000&q=80",
+        viewers: 4498,
+        game: "tetris",
+        live: true
+    },
+    {
+        name: "Amelia",
+        profilePicture: "https://static-bebeautiful-in.unileverservices.com/Flawless-skin-basics.jpg",
+        viewers: 14765,
+        game: "hollow knight",
+        live: false
+    },
+    {
+        name: "Henry",
+        profilePicture: "https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/s93-pa-4802-01.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=b1e69abe76c9b6f333ad818a7a94d0da",
+        viewers: 1279,
+        game: "devil may cry",
+        live: true
+    },
+    {
+        name: "Emma",
+        profilePicture: "https://images.pexels.com/photos/948873/pexels-photo-948873.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-948873.jpg&fm=jpg",
+        viewers: 6983,
+        game: "devil may cry 2",
+        live: true
+    },
+    {
+        name: "Abigail",
+        profilePicture: "https://www.byrdie.com/thmb/aZWxblVz7BMxeObHtJEKX_ddV3c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txpce733110Uae300_Medium_4082489-df45caed45cd449b806f9ce16a20804a.jpg",
+        viewers: 5223,
+        game: "devil may cry 3",
+        live: false
+    }
+];
+let rcChannels = [
+    {
+        name: "Tom",
+        profilePicture: "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=2000",
+        viewers: 658,
+        game: "fortnite",
+        live: true
+    },
+    {
+        name: "Mia",
+        profilePicture: "https://plus.unsplash.com/premium_photo-1664203068093-6f584b381ffd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBmYWNlfGVufDB8fDB8fHww&w=1000&q=80",
+        viewers: 4498,
+        game: "tetris",
+        live: true
+    },
+    {
+        name: "Henry",
+        profilePicture: "https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/s93-pa-4802-01.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=b1e69abe76c9b6f333ad818a7a94d0da",
+        viewers: 1279,
+        game: "devil may cry",
+        live: true
+    },
+    {
+        name: "Emma",
+        profilePicture: "https://images.pexels.com/photos/948873/pexels-photo-948873.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-948873.jpg&fm=jpg",
+        viewers: 6983,
+        game: "devil may cry 2",
+        live: true
+    },
+    {
+        name: "Tom",
+        profilePicture: "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=2000",
+        viewers: 658,
+        game: "fortnite",
+        live: true
+    },
+    {
+        name: "Mia",
+        profilePicture: "https://plus.unsplash.com/premium_photo-1664203068093-6f584b381ffd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBmYWNlfGVufDB8fDB8fHww&w=1000&q=80",
+        viewers: 4498,
+        game: "tetris",
+        live: true
+    },
+    {
+        name: "Henry",
+        profilePicture: "https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/s93-pa-4802-01.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=b1e69abe76c9b6f333ad818a7a94d0da",
+        viewers: 1279,
+        game: "devil may cry",
+        live: true
+    },
+    {
+        name: "Emma",
+        profilePicture: "https://images.pexels.com/photos/948873/pexels-photo-948873.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-948873.jpg&fm=jpg",
+        viewers: 6983,
+        game: "devil may cry 2",
+        live: true
+    }
 ];
 
 document.getElementById('ss-img-0').setAttribute("src", `${streamers[streamers.length - 1].image}`);
@@ -86,7 +220,7 @@ document.getElementById('ss-img-6').setAttribute("src", `${streamers[5].image}`)
 function addP3Style() {
     for(i = 0; i < ssItems.length; i++) {
         if(ssItems[i].id === 'ss-position-3') {
-
+            
             let ssPosnThree = ssItems[i].children[0];
             let ssVideoButtons = document.createElement('div');
             let ssVBLeft = document.createElement('div');
@@ -96,7 +230,7 @@ function addP3Style() {
             ssVideoButtons.classList.add('ss-video-buttons');
             ssVBLeft.classList.add('ss-vb-left');
             ssVBRight.classList.add('ss-vb-right');
-            // ssPageRight.classList.add('ss-page-right');
+            ssPageRight.id = "ss-page-right";
 
             ssVBLeft.innerHTML = 
             `
@@ -130,17 +264,49 @@ function addP3Style() {
                 <i class="bi bi-fullscreen"></i>
             </button>
             `;
+            console.log(ssItems[i].children[0].children[0])
+            for(j = 0; j < streamers.length - 1; j++) {
+                if(ssItems[i].children[0].children[0].getAttribute("src") === streamers[j].image) {
+                    ssPageRight.innerHTML =
+                    `
+                        <div id="ss-pr-top">
+                            <div id="ss-pfp-div">
+                                <img src="${streamers[j].image}" alt="" id="ss-profile-picture">
+                            </div>
+                            <div id="ss-pr-top-texts">
+                                <a href="#" id="ss-pr-name">${streamers[j].name}</a>
+                                <a href="#" id="ss-pr-game">${streamers[j].game}</a>
+                                <p id="ss-pr-viewers">${streamers[j].viewers}</p>
+                            </div>
+                        </div>
+                        <div id="ss-pr-center">
+                            <button>English</button>
+                            <button>Gaming</button>
+                        </div>
+                        <div id="ss-pr-bottom">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio assumenda minus nulla rerum deserunt fuga in harum dolorem iste possimus?</p>
+                        </div>
+                    `;
+                }
+            }
+
+            // fix the ssPageRight code where you have to get data's from streamers object
+            // but ssItemThree keeps changing so the data's must change too
 
             ssPosnThree.appendChild(ssVideoButtons);
             ssVideoButtons.appendChild(ssVBLeft);
             ssVideoButtons.appendChild(ssVBRight);
-            // ssItems[i].appendChild(ssPageRight)
+            ssItems[i].appendChild(ssPageRight)
 
-        } else if(ssItems[i].id !== 'ss-position-3'){
-            let sth = ssItems[i].children[0].children;
-            if(sth.length >= 2) {
-                sth[1].remove()
-            }
+        } else {
+            if(ssItems[i].children[0].children.length >= 2) {
+                ssItems[i].children[0].children[1].remove()
+            };
+            if(ssItems[i].children[1]) {
+                ssItems[i].children[1].remove()
+            } 
+            // why referrencing to an element via document.getElementById doesn't work
+            // but referring to it via ssItems[i]... is ok? 
         }
     };
 }
@@ -151,11 +317,6 @@ addP3Style();
 //         ssItems[i].setAttribute('id', '');
 //     }
 // }
-
-document.getElementById('ss-profile-picture').setAttribute('src', `${streamers[2].image}`);
-document.getElementById('ss-pr-name').innerText = `${streamers[2].name}`;
-document.getElementById('ss-pr-game').innerText = `${streamers[2].name}`;
-document.getElementById('ss-pr-viewers').innerText = `${streamers[2].name}`;
 
 ssNextButton.addEventListener('click', function() {
     for(i = ssItems.length - 1; i > -1; i--) {
@@ -365,130 +526,6 @@ ssPrevButton.addEventListener('click', function() {
     addP3Style()
 });
 
-let followers = [
-    {
-        name: "Jack",
-        profilePicture: "https://techbriefly.com/wp-content/uploads/2023/02/AI-impersonation-Fake-name-generators-this-person-does-not-exist-images-and-more-1.jpg",
-        viewers: 2569,
-        game: "csgo",
-        live: false
-    },
-    {
-        name: "Tom",
-        profilePicture: "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=2000",
-        viewers: 658,
-        game: "fortnite",
-        live: true
-    },
-    {
-        name: "Dan",
-        profilePicture: "https://img.freepik.com/free-photo/emotions-people-concept-headshot-serious-looking-handsome-man-with-beard-looking-confident-determined_1258-26730.jpg?w=2000",
-        viewers: 8303,
-        game: "call of duty",
-        live: false
-    },
-    {
-        name: "Emma",
-        profilePicture: "https://images.pexels.com/photos/948873/pexels-photo-948873.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-948873.jpg&fm=jpg",
-        viewers: 6983,
-        game: "chess",
-        live: false
-    },
-    {
-        name: "Mia",
-        profilePicture: "https://plus.unsplash.com/premium_photo-1664203068093-6f584b381ffd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBmYWNlfGVufDB8fDB8fHww&w=1000&q=80",
-        viewers: 4498,
-        game: "tetris",
-        live: true
-    },
-    {
-        name: "Amelia",
-        profilePicture: "https://static-bebeautiful-in.unileverservices.com/Flawless-skin-basics.jpg",
-        viewers: 14765,
-        game: "hollow knight",
-        live: false
-    },
-    {
-        name: "Henry",
-        profilePicture: "https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/s93-pa-4802-01.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=b1e69abe76c9b6f333ad818a7a94d0da",
-        viewers: 1279,
-        game: "devil may cry",
-        live: true
-    },
-    {
-        name: "Emma",
-        profilePicture: "https://images.pexels.com/photos/948873/pexels-photo-948873.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-948873.jpg&fm=jpg",
-        viewers: 6983,
-        game: "devil may cry 2",
-        live: true
-    },
-    {
-        name: "Abigail",
-        profilePicture: "https://www.byrdie.com/thmb/aZWxblVz7BMxeObHtJEKX_ddV3c=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Stocksy_txpce733110Uae300_Medium_4082489-df45caed45cd449b806f9ce16a20804a.jpg",
-        viewers: 5223,
-        game: "devil may cry 3",
-        live: false
-    }
-];
-let rcChannels = [
-    {
-        name: "Tom",
-        profilePicture: "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=2000",
-        viewers: 658,
-        game: "fortnite",
-        live: true
-    },
-    {
-        name: "Mia",
-        profilePicture: "https://plus.unsplash.com/premium_photo-1664203068093-6f584b381ffd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBmYWNlfGVufDB8fDB8fHww&w=1000&q=80",
-        viewers: 4498,
-        game: "tetris",
-        live: true
-    },
-    {
-        name: "Henry",
-        profilePicture: "https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/s93-pa-4802-01.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=b1e69abe76c9b6f333ad818a7a94d0da",
-        viewers: 1279,
-        game: "devil may cry",
-        live: true
-    },
-    {
-        name: "Emma",
-        profilePicture: "https://images.pexels.com/photos/948873/pexels-photo-948873.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-948873.jpg&fm=jpg",
-        viewers: 6983,
-        game: "devil may cry 2",
-        live: true
-    },
-    {
-        name: "Tom",
-        profilePicture: "https://img.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg?w=2000",
-        viewers: 658,
-        game: "fortnite",
-        live: true
-    },
-    {
-        name: "Mia",
-        profilePicture: "https://plus.unsplash.com/premium_photo-1664203068093-6f584b381ffd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBmYWNlfGVufDB8fDB8fHww&w=1000&q=80",
-        viewers: 4498,
-        game: "tetris",
-        live: true
-    },
-    {
-        name: "Henry",
-        profilePicture: "https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/s93-pa-4802-01.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=b1e69abe76c9b6f333ad818a7a94d0da",
-        viewers: 1279,
-        game: "devil may cry",
-        live: true
-    },
-    {
-        name: "Emma",
-        profilePicture: "https://images.pexels.com/photos/948873/pexels-photo-948873.jpeg?cs=srgb&dl=pexels-andrea-piacquadio-948873.jpg&fm=jpg",
-        viewers: 6983,
-        game: "devil may cry 2",
-        live: true
-    }
-];
-
 (function createSidebarChannels() {
     let followerCount = -1;
     let rcChannelsCount = -1;
@@ -646,7 +683,7 @@ let rcChannels = [
     });
     rcChannels.map(() => {
         rcChannelsCount++;
-        
+
         if(rcChannelsCount < 6) {    
             recommendedChannels.innerHTML +=
             `
