@@ -215,8 +215,6 @@ document.getElementById('ss-img-4').setAttribute("src", `${streamers[3].image}`)
 document.getElementById('ss-img-5').setAttribute("src", `${streamers[4].image}`);
 document.getElementById('ss-img-6').setAttribute("src", `${streamers[5].image}`);
 
-//Fix addP3Style function
-
 function addP3Style() {
     for(i = 0; i < ssItems.length; i++) {
         if(ssItems[i].id === 'ss-position-3') {
@@ -264,8 +262,7 @@ function addP3Style() {
                 <i class="bi bi-fullscreen"></i>
             </button>
             `;
-            console.log(ssItems[i].children[0].children[0])
-            for(j = 0; j < streamers.length - 1; j++) {
+            for(j = 0; j < streamers.length; j++) {
                 if(ssItems[i].children[0].children[0].getAttribute("src") === streamers[j].image) {
                     ssPageRight.innerHTML =
                     `
@@ -276,7 +273,7 @@ function addP3Style() {
                             <div id="ss-pr-top-texts">
                                 <a href="#" id="ss-pr-name">${streamers[j].name}</a>
                                 <a href="#" id="ss-pr-game">${streamers[j].game}</a>
-                                <p id="ss-pr-viewers">${streamers[j].viewers}</p>
+                                <p id="ss-pr-viewers">${streamers[j].viewers} viewers</p>
                             </div>
                         </div>
                         <div id="ss-pr-center">
@@ -288,10 +285,7 @@ function addP3Style() {
                         </div>
                     `;
                 }
-            }
-
-            // fix the ssPageRight code where you have to get data's from streamers object
-            // but ssItemThree keeps changing so the data's must change too
+            };
 
             ssPosnThree.appendChild(ssVideoButtons);
             ssVideoButtons.appendChild(ssVBLeft);
@@ -311,12 +305,6 @@ function addP3Style() {
     };
 }
 addP3Style();
-
-// for(i = 0; i < ssItems.length; i++) {
-//     if(ssItems[i].getAttribute('id') === null) {
-//         ssItems[i].setAttribute('id', '');
-//     }
-// }
 
 ssNextButton.addEventListener('click', function() {
     for(i = ssItems.length - 1; i > -1; i--) {
@@ -414,7 +402,7 @@ ssNextButton.addEventListener('click', function() {
                 ssItems[i + 2].id = 'ss-position-2';
                 ssItems[i + 1].id = 'ss-position-1';
                 ssItems[0].id = 'ss-position-0';
-            } // why does adding break at the end help the process?
+            }
         
         }
     }
@@ -437,9 +425,9 @@ ssPrevButton.addEventListener('click', function() {
                             document.getElementById('ss-position-6').children[0].children[0].setAttribute('src', `${streamers[ii - 1].image}`);
                             break
                         };
-                    }
-                }
-            }
+                    };
+                };
+            };
             if(i - 6 >= 0) {
                 changeImg()
 
@@ -526,9 +514,9 @@ ssPrevButton.addEventListener('click', function() {
     addP3Style()
 });
 
+// why does adding break at the end of each for loop if statements help the process?
+
 (function createSidebarChannels() {
-    let followerCount = -1;
-    let rcChannelsCount = -1;
     let liveChannels = [];
     let offlineChannels = [];
     let orderedFollowers = [];
@@ -539,7 +527,7 @@ ssPrevButton.addEventListener('click', function() {
     let sbRcSm = document.getElementById("sb-rc-sm");
     let sbRcSl = document.getElementById("sb-rc-sl");
 
-    // Followed Channels
+    // set the values of orderedFollowers variable
 
     followers.map(f => {
         if(f.live) {
@@ -547,39 +535,39 @@ ssPrevButton.addEventListener('click', function() {
         } else {
             offlineChannels.push(f)
         }
-    })
-
+    });
     liveChannels.forEach(c => orderedFollowers.push(c));
     offlineChannels.forEach(c => orderedFollowers.push(c));
 
-    followers.map(() => {
-        followerCount++
+    // Followed Channels
+
+    orderedFollowers.map((follower) => {
 
         // learn how to have the same variable name and argument name without problem.
         
         if(orderedFollowers.length > 6) {
             sbFcSm.style.display = "block";
 
-            if(followerCount < 6) {
-                if(orderedFollowers[followerCount].live) {
+            if(orderedFollowers.indexOf(follower) < 6) {
+                if(follower.live) {
                     followedChannels.innerHTML +=
                     `
                     <div class="channel">
                         <div class="fc-left">
                             <div class="pfp-container">
-                                <img class="channel-pfp" src="${orderedFollowers[followerCount].profilePicture}" alt="">
+                                <img class="channel-pfp" src="${follower.profilePicture}" alt="">
                             </div>
                             <div class="channel-texts">
                                 <div class="channel-name-div">
-                                    <p class="channel-name">${orderedFollowers[followerCount].name}</p>
+                                    <p class="channel-name">${follower.name}</p>
                                 </div>
                                 <div class="stream-content-div">
-                                    <p class="stream-content">${orderedFollowers[followerCount].game}</p>
+                                    <p class="stream-content">${follower.game}</p>
                                 </div>
                             </div>
                         </div>
                             <div class="fc-right-live">
-                                <p><span class="live-symbol">&#128308;</span>${orderedFollowers[followerCount].viewers}</p>
+                                <p><span class="live-symbol">&#128308;</span>${follower.viewers}</p>
                             </div>
                     </div>
                     `;
@@ -589,9 +577,9 @@ ssPrevButton.addEventListener('click', function() {
                             <div class="channel">
                                 <div class="offline-fc-left">
                                     <div class="pfp-container">
-                                        <img class="channel-pfp" src="${orderedFollowers[followerCount].profilePicture}" alt="">
+                                        <img class="channel-pfp" src="${follower.profilePicture}" alt="">
                                     </div>
-                                    <p class="channel-name">${orderedFollowers[followerCount].name}</p>
+                                    <p class="channel-name">${follower.name}</p>
                                 </div>
                                     <p class="offline-text">Offline</p>
                             </div>
@@ -599,27 +587,42 @@ ssPrevButton.addEventListener('click', function() {
                 }
             } else{
                 sbFcSm.addEventListener("click", () => {
-                    followedChannels.innerHTML += 
-                    `
-                    <div class="channel">
-                        <div class="fc-left">
-                            <div class="pfp-container">
-                                <img class="channel-pfp" src="${orderedFollowers[followerCount].profilePicture}" alt="">
-                            </div>
-                            <div class="channel-texts">
-                                <div class="channel-name-div">
-                                    <p class="channel-name">${orderedFollowers[followerCount].name}</p>
+                    if(follower.live) {
+                        followedChannels.innerHTML +=
+                        `
+                        <div class="channel">
+                            <div class="fc-left">
+                                <div class="pfp-container">
+                                    <img class="channel-pfp" src="${follower.profilePicture}" alt="">
                                 </div>
-                                <div class="stream-content-div">
-                                    <p class="stream-content">${orderedFollowers[followerCount].game}</p>
+                                <div class="channel-texts">
+                                    <div class="channel-name-div">
+                                        <p class="channel-name">${follower.name}</p>
+                                    </div>
+                                    <div class="stream-content-div">
+                                        <p class="stream-content">${follower.game}</p>
+                                    </div>
                                 </div>
                             </div>
+                                <div class="fc-right-live">
+                                    <p><span class="live-symbol">&#128308;</span>${follower.viewers}</p>
+                                </div>
                         </div>
-                            <div class="fc-right-live">
-                                <p><span class="live-symbol">&#128308;</span>${orderedFollowers[followerCount].viewers}</p>
-                            </div>
-                    </div>
-                    `;
+                        `;
+                    } else {
+                        followedChannels.innerHTML +=
+                            `
+                                <div class="channel">
+                                    <div class="offline-fc-left">
+                                        <div class="pfp-container">
+                                            <img class="channel-pfp" src="${follower.profilePicture}" alt="">
+                                        </div>
+                                        <p class="channel-name">${follower.name}</p>
+                                    </div>
+                                        <p class="offline-text">Offline</p>
+                                </div>
+                            `;
+                    }
                     sbFcSm.style.display = "none";
                     sbFcSl.style.display = "block";
 
@@ -635,74 +638,71 @@ ssPrevButton.addEventListener('click', function() {
                     sbFcSm.style.display = "block";
                 })
             }
-
-            // why does it only work with if statement but not while loop?
-
+                
         } else {
             sbFcSm.style.display = "none";
-            if(orderedFollowers[followerCount].live) {
-                channelsList.innerHTML +=
+            if(follower.live) {
+                followedChannels.innerHTML +=
                 `
                 <div class="channel">
                     <div class="fc-left">
                         <div class="pfp-container">
-                            <img class="channel-pfp" src="${orderedFollowers[followerCount].profilePicture}" alt="">
+                            <img class="channel-pfp" src="${follower.profilePicture}" alt="">
                         </div>
                         <div class="channel-texts">
                             <div class="channel-name-div">
-                                <p class="channel-name">${orderedFollowers[followerCount].name}</p>
+                                <p class="channel-name">${follower.name}</p>
                             </div>
                             <div class="stream-content-div">
-                                <p class="stream-content">${orderedFollowers[followerCount].game}</p>
+                                <p class="stream-content">${follower.game}</p>
                             </div>
                         </div>
                     </div>
                         <div class="fc-right-live">
-                            <p><span class="live-symbol">&#128308;</span>${orderedFollowers[followerCount].viewers}</p>
+                            <p><span class="live-symbol">&#128308;</span>${follower.viewers}</p>
                         </div>
                 </div>
                 `;
             } else {
-                channelsList.innerHTML +=
+                followedChannels.innerHTML +=
                     `
                         <div class="channel">
                             <div class="offline-fc-left">
                                 <div class="pfp-container">
-                                    <img class="channel-pfp" src="${orderedFollowers[followerCount].profilePicture}" alt="">
+                                    <img class="channel-pfp" src="${follower.profilePicture}" alt="">
                                 </div>
-                                <p class="channel-name">${orderedFollowers[followerCount].name}</p>
+                                <p class="channel-name">${follower.name}</p>
                             </div>
                                 <p class="offline-text">Offline</p>
                         </div>
                     `;
             }
         };
-        
-        // Recommended Channels
 
     });
-    rcChannels.map(() => {
-        rcChannelsCount++;
 
-        if(rcChannelsCount < 6) {    
+    // Recommended Channels
+
+    rcChannels.map(rcChannel => {
+        if(rcChannels.indexOf(rcChannel) < 6) {    
             recommendedChannels.innerHTML +=
             `
             <div class="channel">
                 <div class="fc-left">
                     <div class="pfp-container">
-                        <img class="channel-pfp" src="${rcChannels[rcChannelsCount].profilePicture}" alt="">
+                        <img class="channel-pfp" src="${rcChannel.profilePicture}" alt="">
                     </div>
                     <div class="channel-texts">
                         <div class="channel-name-div">
-                            <p class="channel-name">${rcChannels[rcChannelsCount].name}</p>
+                            <p class="channel-name">${rcChannel.name}</p>
                         </div>
                         <div class="stream-content-div">
-                            <p class="stream-content">${rcChannels[rcChannelsCount].game}</p>
+                            <p class="stream-content">${rcChannel.game}</p>
                         </div>
                     </div>
                 </div>
                     <div class="fc-right-live">
-                        <p><span class="live-symbol">&#128308;</span>${rcChannels[rcChannelsCount].viewers}</p>
+                        <p><span class="live-symbol">&#128308;</span>${rcChannel.viewers}</p>
                     </div>
             </div>
             `;
@@ -713,19 +713,19 @@ ssPrevButton.addEventListener('click', function() {
                 <div class="channel">
                     <div class="fc-left">
                         <div class="pfp-container">
-                            <img class="channel-pfp" src="${rcChannels[rcChannelsCount].profilePicture}" alt="">
+                            <img class="channel-pfp" src="${rcChannel.profilePicture}" alt="">
                         </div>
                         <div class="channel-texts">
                             <div class="channel-name-div">
-                                <p class="channel-name">${rcChannels[rcChannelsCount].name}</p>
+                                <p class="channel-name">${rcChannel.name}</p>
                             </div>
                             <div class="stream-content-div">
-                                <p class="stream-content">${rcChannels[rcChannelsCount].game}</p>
+                                <p class="stream-content">${rcChannel.game}</p>
                             </div>
                         </div>
                     </div>
                         <div class="fc-right-live">
-                            <p><span class="live-symbol">&#128308;</span>${rcChannels[rcChannelsCount].viewers}</p>
+                            <p><span class="live-symbol">&#128308;</span>${rcChannel.viewers}</p>
                         </div>
                 </div>
                 `;
@@ -745,174 +745,5 @@ ssPrevButton.addEventListener('click', function() {
                 sbRcSm.style.display = "block";
             })
         };
-    })
-})()
-    
-
-    // if(followerCount < 6) {
-    //     console.log(followerCount)
-    //     recommendedChannels.innerHTML +=
-    //     `
-    //     <div class="channel">
-    //         <div class="fc-left">
-    //             <div class="pfp-container">
-    //                 <img class="channel-pfp" src="${follower.profilePicture}" alt="">
-    //             </div>
-    //             <div class="channel-texts">
-    //                 <div class="channel-name-div">
-    //                     <p class="channel-name">${follower.name}</p>
-    //                 </div>
-    //                 <div class="stream-content-div">
-    //                     <p class="stream-content">${follower.game}</p>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //             <div class="fc-right-live">
-    //                 <p><span class="live-symbol">&#128308;</span>${follower.viewers}</p>
-    //             </div>
-    //     </div>
-    //     `;
-    // } else {
-    //     let sbRcSm = document.getElementById("sb-rc-sm");
-    //     let sbRcSl = document.getElementById("sb-rc-sl");
-    //     sbRcSm.addEventListener("click", () => {
-    //         recommendedChannels.innerHTML += 
-    //         `
-    //         <div class="channel">
-    //             <div class="fc-left">
-    //                 <div class="pfp-container">
-    //                     <img class="channel-pfp" src="${followers[followerCount].profilePicture}" alt="">
-    //                 </div>
-    //                 <div class="channel-texts">
-    //                     <div class="channel-name-div">
-    //                         <p class="channel-name">${followers[followerCount].name}</p>
-    //                     </div>
-    //                     <div class="stream-content-div">
-    //                         <p class="stream-content">${followers[followerCount].game}</p>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //                 <div class="fc-right-live">
-    //                     <p><span class="live-symbol">&#128308;</span>${followers[followerCount].viewers}</p>
-    //                 </div>
-    //         </div>
-    //         `;
-    //         sbRcSm.style.display = "none";
-    //         sbRcSl.style.display = "block";
-    //         // problem with the followerCount variable.
-    //         // should be 6 7 8 but is 8 8 8.
-            
-    //     });
-    //     sbRcSl.addEventListener("click", () => {
-    //         for(i = followers.length - 1; i > 5; i--) {
-    //             recommendedChannels.children[i].remove()
-    //         }
-    //         sbRcSl.style.display = "none";
-    //         sbRcSm.style.display = "block";
-    //     })
-    // }
-    
-    // if(followerCount < 6) {
-    //     followedChannels.innerHTML +=
-    //     `
-    //         <div class="channel">
-    //             <div class="offline-fc-left">
-    //                 <div class="pfp-container">
-    //                     <img class="channel-pfp" src="${follower.profilePicture}" alt="">
-    //                 </div>
-    //                 <p class="channel-name">${follower.name}</p>
-    //             </div>
-    //                 <p class="offline-text">Offline</p>
-    //         </div>
-    //     `;
-    // } else {
-    //     let sbFcSm = document.getElementById("sb-fc-sm");
-    //     let sbFcSl = document.getElementById("sb-fc-sl");
-    //     sbFcSm.addEventListener("click", () => {
-    //         followedChannels.innerHTML += 
-    //         `
-    //         <div class="channel">
-    //             <div class="offline-fc-left">
-    //                 <div class="pfp-container">
-    //                     <img class="channel-pfp" src="${followers[followerCount].profilePicture}" alt="">
-    //                 </div>
-    //                 <p class="channel-name">${followers[followerCount].name}</p>
-    //             </div>
-    //                 <p class="offline-text">Offline</p>
-    //         </div>
-    //         `;
-    //         sbFcSm.style.display = "none";
-    //         sbFcSl.style.display = "block";
-    //         // problem with the followerCount variable.
-    //         // should be 6 7 8 but is 8 8 8.
-            
-    //     });
-    //     sbFcSl.addEventListener("click", () => {
-    //         for(i = followers.length - 1; i > 5; i--) {
-    //             followedChannels.children[i].remove()
-    //         }
-    //         sbFcSl.style.display = "none";
-    //         sbFcSm.style.display = "block";
-    //     })
-    // };
-    // if(followerCount < 6) {
-    //     recommendedChannels.innerHTML +=
-    //     `
-    //     <div class="channel">
-    //         <div class="fc-left">
-    //             <div class="pfp-container">
-    //                 <img class="channel-pfp" src="${follower.profilePicture}" alt="">
-    //             </div>
-    //             <div class="channel-texts">
-    //                 <div class="channel-name-div">
-    //                     <p class="channel-name">${follower.name}</p>
-    //                 </div>
-    //                 <div class="stream-content-div">
-    //                     <p class="stream-content">${follower.game}</p>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //             <div class="fc-right-live">
-    //                 <p><span class="live-symbol">&#128308;</span>${follower.viewers}</p>
-    //             </div>
-    //     </div>
-    //     `;
-    // } else {
-    //     let sbRcSm = document.getElementById("sb-rc-sm");
-    //     let sbRcSl = document.getElementById("sb-rc-sl");
-    //     sbRcSm.addEventListener("click", () => {
-    //         recommendedChannels.innerHTML += 
-    //         `
-    //         <div class="channel">
-    //             <div class="fc-left">
-    //                 <div class="pfp-container">
-    //                     <img class="channel-pfp" src="${followers[followerCount].profilePicture}" alt="">
-    //                 </div>
-    //                 <div class="channel-texts">
-    //                     <div class="channel-name-div">
-    //                         <p class="channel-name">${followers[followerCount].name}</p>
-    //                     </div>
-    //                     <div class="stream-content-div">
-    //                         <p class="stream-content">${followers[followerCount].game}</p>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //                 <div class="fc-right-live">
-    //                     <p><span class="live-symbol">&#128308;</span>${followers[followerCount].viewers}</p>
-    //                 </div>
-    //         </div>
-    //         `;
-    //         sbRcSm.style.display = "none";
-    //         sbRcSl.style.display = "block";
-    //         // problem with the followerCount variable.
-    //         // should be 6 7 8 but is 8 8 8.
-            
-    //     });
-    //     sbRcSl.addEventListener("click", () => {
-    //         for(i = followers.length - 1; i > 5; i--) {
-    //             recommendedChannels.children[i].remove()
-    //         }
-    //         sbRcSl.style.display = "none";
-    //         sbRcSm.style.display = "block";
-    //     })
-    // }
+    });
+})();
